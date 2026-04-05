@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Love ❤️</title>
+
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+/* Pages */
+.page {
+  display: none;
+  height: 100vh;
+  width: 100%;
+}
+
+/* First page (password) */
+#page1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(to right, #ff758c, #ff7eb3);
+  color: white;
+}
+
+input {
+  padding: 12px;
+  border-radius: 20px;
+  border: none;
+  width: 200px;
+  text-align: center;
+  margin-top: 15px;
+}
+
+button {
+  margin-top: 15px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 20px;
+  background: white;
+  color: #ff4d6d;
+  font-size: 16px;
+}
+
+#error {
+  margin-top: 10px;
+  color: yellow;
+  font-size: 14px;
+}
+
+/* Second page */
+#page2 {
+  background: url('https://files.catbox.moe/rd0lhl.jpg') no-repeat center center/cover;
+  color: white;
+  position: relative;
+}
+
+.overlay {
+  background: rgba(0,0,0,0.6);
+  min-height: 100vh;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+h1 {
+  font-size: 26px;
+  margin-top: 20px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-top: 15px;
+}
+
+/* Floating hearts */
+.hearts {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.hearts span {
+  position: absolute;
+  color: red;
+  font-size: 20px;
+  animation: float 10s linear infinite;
+  bottom: -50px;
+}
+
+.hearts span:nth-child(1) { left: 10%; animation-duration: 8s; }
+.hearts span:nth-child(2) { left: 20%; animation-duration: 10s; }
+.hearts span:nth-child(3) { left: 30%; animation-duration: 7s; }
+.hearts span:nth-child(4) { left: 40%; animation-duration: 12s; }
+.hearts span:nth-child(5) { left: 50%; animation-duration: 9s; }
+.hearts span:nth-child(6) { left: 60%; animation-duration: 11s; }
+.hearts span:nth-child(7) { left: 70%; animation-duration: 8s; }
+.hearts span:nth-child(8) { left: 80%; animation-duration: 10s; }
+.hearts span:nth-child(9) { left: 90%; animation-duration: 9s; }
+
+@keyframes float {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-100vh); opacity: 0; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1 (PASSWORD) -->
+<div id="page1" class="page" style="display:flex;">
+  <div>
+    <h1>Enter My Heart 🔐❤️Baby girl{MARY INKANSAH;MY TREASURE}</h1>
+    <p>Only you know the password 💕 To my hearts</p>
+
+    <input type="password" id="password" placeholder="Enter password ❤️">
+    <br>
+    <button onclick="checkPassword()">Unlock ❤️</button>
+
+    <div id="error"></div>
+  </div>
+</div>
+
+<!-- PAGE 2 -->
+<div id="page2" class="page">
+
+  <!-- Floating hearts -->
+  <div class="hearts">
+    <span>❤️</span><span>❤️</span><span>❤️</span>
+    <span>❤️</span><span>❤️</span><span>❤️</span>
+    <span>❤️</span><span>❤️</span><span>❤️</span>
+  </div>
+
+  <div class="overlay">
+    <h1>My Dearest ❤️</h1>
+
+    <p>
+    From the moment you came into my life, everything changed.  
+    You brought light into my darkest days, and happiness into my heart.  
+    Every second with you feels like a dream I never want to wake up from.  
+    </p>
+
+    <p>
+    You are not just my girlfriend, you are my peace, my joy, my everything.  
+    Your smile gives me life, your voice calms my soul,  
+    and your love completes me in ways I can’t explain.  
+    </p>
+
+    <p>
+    No matter what happens, I promise to always stand by you,  
+    to love you endlessly, and to cherish every moment with you.  
+    You mean the world to me ❤️  
+    </p>
+  </div>
+</div>
+
+<!-- MUSIC -->
+<audio id="music" loop>
+  <source src="https://dl.dropboxusercontent.com/scl/fi/jf93ln6vvq753vv3ofr4j/Kunmie-Arike-JustNaija.com.mp3?rlkey=ktiwx3e28ffae0b4rh62wl6zy" type="audio/mpeg">
+</audio>
+
+<script>
+function checkPassword() {
+  const correctPassword = "MARYINKANSAH"; // CHANGE THIS ❤️
+  const input = document.getElementById("password").value;
+
+  if (input === correctPassword) {
+    document.getElementById("page1").style.display = "none";
+    document.getElementById("page2").style.display = "block";
+
+    document.getElementById("music").play();
+  } else {
+    document.getElementById("error").innerText = "Wrong password 😢 try again my love";
+  }
+}
+</script>
+
+</body>
+</html>
